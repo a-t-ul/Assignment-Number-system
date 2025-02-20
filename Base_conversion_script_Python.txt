@@ -1,0 +1,36 @@
+def base_convertion():
+    current_base = input('Enter current base: ')
+    new_base = input('Enter new base: ') 
+    num = input('Enter the number: ')
+
+    try:
+        current_base = int(current_base)
+        new_base = int(new_base)
+        num1 = int(num)
+        if current_base <= 1 or new_base <=1:
+            print('Enter value greater or equal to 2.')
+            return false
+        if num1 == 0:
+            print('Enter a valid number which needs to be converted!')
+            return false
+        remainder = 0
+        i = 1
+        num2 = 0
+        for i in range(len(num)):
+            if num1 >= 10:
+                remainder = num1%10
+            else:
+                remainder = num1
+            num2 =  num2 + remainder*((current_base)**(int(i)))
+            num1 = int(num1/10)
+            
+        print('\nDecimal numaber: ', num2)
+            
+        
+    except:
+        print('Error - Please enter correct values!')
+        
+        
+
+
+base_convertion()
