@@ -24,13 +24,37 @@ def base_convertion():
             num2 =  num2 + remainder*((current_base)**(int(i)))
             num1 = int(num1/10)
             
-        print('\nDecimal numaber: ', num2)
-            
+        print('\nNumber in base 10: ', num2)
+        
+        if new_base != 10:
+            num3 = 0
+            remainder1 = 0
+            remainder1 = num2 % new_base
+        #print(remainder1)
+        
+        
+        if new_base != 10:
+            num3 = 0
+            remainder2 = 0
+            ans = ''
+            for i in range(len(str(num2))):
+                remainder2 = num2 % new_base
+                num2 = int(num2/new_base)
+                if num2 > 0:
+                    
+                    ans += str(remainder2)
+                    if num2 < new_base and num2 != 0:
+                        ans += str(num2)
+                    else:
+                        continue
+                    #print(i, remainder2, num2, ans)
+            ans =  ans[::-1]
+            print('Number in base', new_base,':', ans)
         
     except:
         print('Error - Please enter correct values!')
+            
+
         
         
-
-
 base_convertion()
