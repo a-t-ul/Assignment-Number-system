@@ -1,0 +1,38 @@
+def are_overlapping(x1, x2, x3, x4):
+    # Write your logic
+
+    cord = [x1,x2,x3,x4]
+    cord2 = 0
+    cord3 = 0
+    
+    var_max = max(cord)
+    var_min = min(cord)
+    
+    if x1 == var_min:
+        cord2 = x2
+    elif x2 == var_min:
+        cord2 = x1
+    elif x3 == var_min:
+        cord2 = x4
+    else:
+        cord2 = x3
+        
+    if x1 == var_max:
+        cord3 = x2
+    elif x2 == var_max:
+        cord3 = x1
+    elif x3 == var_max:
+        cord3 = x4
+    else:
+        cord3 = x3        
+    
+    print("line 1 - ", var_min, cord2, "\nline 2 - ", cord3, var_max)
+    
+    if cord3 <= cord2:
+        return True
+    else:
+        return False
+    
+
+x = are_overlapping(-5, -10, 1, -4.5)
+print(x)
